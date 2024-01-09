@@ -1,11 +1,8 @@
 import Student from "../models/student";
 import client from "./server";
-const express = require("express");
-const router = express.Router();
-
-const database = client.db('Students');
-const students = database.collection('Student_Details');
-const subjects = database.collection('Subjects');
+import express, { json } from 'express';
+import mongodb, {MongoClient} from 'mongodb'
+const app = express();
 
 //getUser middleware
 async function getStudent(req, res, next) {

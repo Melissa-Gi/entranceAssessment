@@ -10,10 +10,10 @@ import { SalesTaxComponent } from './sales-tax.component';
   selector: 'app-root',
   template: `
     <h1>School Subjects and Students</h1>
-    <router-outlet></router-outlet>
+    <button onclick="window.location.href = 'subjectsPage.html';">View Subjects</button>
     <app-student-list></app-student-list>
     <app-sales-tax></app-sales-tax>
   `,
-  imports: [HeroListComponent,StudentListComponent,SalesTaxComponent,RouterModule,]
+  imports: [HeroListComponent,StudentListComponent,SalesTaxComponent,RouterModule]
 })
 export class AppComponent { }
