@@ -1,7 +1,7 @@
-import Student from "../models/student"
+import Student from "../models/student";
 const express = require("express");
 const router = express.Router();
-//const Student = require("../models/student");
+
 
 //getUser middleware
 async function getStudent(req, res, next) {
@@ -21,7 +21,7 @@ async function getStudent(req, res, next) {
 // Get All Route
 router.get("/api/students", async (req, res) => {
     try {
-        const students = await Student.find()
+        const students = await students.find()
         res.json(students)
       } catch (err) {
         res.status(500).json({message: err.message})

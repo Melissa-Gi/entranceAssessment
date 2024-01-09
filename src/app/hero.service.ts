@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-
 import { Hero } from './hero';
 import { BackendService } from './backend.service';
 import { Logger } from './logger.service';

@@ -11,14 +11,19 @@ const app = express();
 const uri = 'mongodb+srv://MelG:connectToDB19461@cluster0.intpyda.mongodb.net/?retryWrites=true&w=majority';
 
 const client = new MongoClient(uri);
+const database = client.db('Students');
+const students = database.collection('Student_Details');
+const subjects = database.collection('Subjects');
 
+export default {client,database,students,subjects};
+/*
 async function run() {
   try {
-    const database = client.db('Students');
-    const students = database.collection('Student_Details');
+    //const database = client.db('Students');
+    //const students = database.collection('Student_Details');
 
     // Query for a student t
-    const query = { id: 'RQJ5i1c' };
+    //const query = { id: 'RQJ5i1c' };
     const student = await students.findOne(query);
 
     console.log(student);
@@ -27,4 +32,4 @@ async function run() {
     await client.close();
   }
 }
-run().catch(console.dir);
+run().catch(console.dir);*/
