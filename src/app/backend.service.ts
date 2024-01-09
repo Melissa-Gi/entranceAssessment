@@ -1,7 +1,18 @@
 import { Injectable, Type } from '@angular/core';
-
+import client from "./server";
 import { Logger } from './logger.service';
 import { Hero } from './hero';
+
+//import { Student } from '../models/student';
+//import router from ./routes/students;
+
+const database = client.db('Students');
+const students = database.collection('Student_Details');
+const subjects = database.collection('Subjects');
+
+//const allStudents: Student[];
+console.log(fetch('https://http://localhost:4200/api/students'));
+
 
 const HEROES = [
         new Hero('Windstorm', 'Weather mastery'),

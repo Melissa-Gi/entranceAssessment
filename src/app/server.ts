@@ -11,11 +11,8 @@ const app = express();
 const uri = 'mongodb+srv://MelG:connectToDB19461@cluster0.intpyda.mongodb.net/?retryWrites=true&w=majority';
 
 const client = new MongoClient(uri);
-const database = client.db('Students');
-const students = database.collection('Student_Details');
-const subjects = database.collection('Subjects');
 
-export default {client,database,students,subjects};
+export default client;
 /*
 async function run() {
   try {

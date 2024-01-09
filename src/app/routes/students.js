@@ -1,7 +1,11 @@
 import Student from "../models/student";
+import client from "./server";
 const express = require("express");
 const router = express.Router();
 
+const database = client.db('Students');
+const students = database.collection('Student_Details');
+const subjects = database.collection('Subjects');
 
 //getUser middleware
 async function getStudent(req, res, next) {
@@ -21,8 +25,9 @@ async function getStudent(req, res, next) {
 // Get All Route
 router.get("/api/students", async (req, res) => {
     try {
-        const students = await students.find()
-        res.json(students)
+        const allStudents = [];
+        allStudents = await students.find();
+        res.json(allStudents);
       } catch (err) {
         res.status(500).json({message: err.message})
       }
