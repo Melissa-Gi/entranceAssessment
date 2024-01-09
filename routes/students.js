@@ -1,7 +1,7 @@
-
+import Student from "../models/student"
 const express = require("express");
 const router = express.Router();
-const Student = require("../models/student");
+//const Student = require("../models/student");
 
 //getUser middleware
 async function getStudent(req, res, next) {

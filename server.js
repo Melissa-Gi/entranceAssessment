@@ -1,46 +1,30 @@
 
 //MongoDB connection
 
-//require("dotenv").config();
 import express, { json } from 'express';
+import mongodb, {MongoClient} from 'mongodb'
 const app = express();
-import { set, connect, connection as _connection } from "mongoose";
 
-const connectionStr = "mongodb+srv://MelG:<0rganisationIsKey952>@cluster0.intpyda.mongodb.net/?retryWrites=true&w=majority"
-set("strictQuery", true); 
-const options = { 
-    useNewUrlParser: true, 
-    useUnifiedTopology: true, 
-}; 
-connect(connectionStr, options, (error, connection) => { 
-    if (error) { 
-        console.error("Error connecting to MongoDB:", error); 
-    } else { 
-        console.log("Connected to MongoDB!"); 
-    } 
-});
+//From MongoDB docs
 
-//mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true }); 
-const db = _connection;
-db.on("error", error => console.log(error));
-db.once("open", () => console.log("connection to db established"));
-app.use(json());
-import usersRouter from "./routes/students";
-app.use("/students", usersRouter);
-app.listen(process.env.PORT, () => console.log(`server has started at port ${process.env.PORT}`));
+// connection string.
+const uri = 'mongodb+srv://MelG:connectToDB19461@cluster0.intpyda.mongodb.net/?retryWrites=true&w=majority';
 
+const client = new MongoClient(uri);
 
+async function run() {
+  try {
+    const database = client.db('Students');
+    const students = database.collection('Student_Details');
 
-/*Old stuff
-// Create a new student object
-const person = await Student.create({
-    id: 'LYC9n2c',
-    first_name: 'Larry',
-    last_name: 'Gray',
-  });
-  
+    // Query for a student t
+    const query = { id: 'RQJ5i1c' };
+    const student = await students.findOne(query);
 
-//test the insert with a find
-// Find a particular student
-const firstPerson = await Student.find({first_name:'Larry'});
-console.log(person);*/
+    console.log(student);
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
