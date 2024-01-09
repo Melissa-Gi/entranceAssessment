@@ -1,0 +1,8 @@
+GET http://localhost:3000/Students.Student_Details/api/students
+###
+POST http://localhost:3000/Students.Student_Details/api/students
+Content-Type: application/json
+{
+"first_name":"John",
+"last_name":"Doe"
+}
