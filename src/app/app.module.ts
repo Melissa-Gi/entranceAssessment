@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SubjectsPage } from './subjectsPage';
 import { AppComponent } from './app.component';
-import { BackendService } from './backend.service'
+import { BackendService } from './services/school.service'
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({

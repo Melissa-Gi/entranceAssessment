@@ -2,6 +2,7 @@ import { bootstrapApplication, provideProtractorTestingSupport } from '@angular/
 import { provideRouter } from '@angular/router';
 import {AppComponent} from './app/app.component';
 import router from './app/routes/routes';
+require('dotenv').config();
 
 bootstrapApplication(AppComponent, {
   providers: [

@@ -4,7 +4,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Student } from './student';
 import { StudentDetailComponent } from './student-detail.component';
-import { HeroService } from './hero.service';
+import { HeroService } from './services/student.service';
 
 @Component({
   standalone: true,

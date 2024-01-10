@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Student } from './student';
-import { BackendService } from './backend.service';
-import { Logger } from './logger.service';
+import { Student } from '../student';
+import { BackendService } from './school.service';
+import { Logger } from '../logger.service';
 
 @Injectable({providedIn: 'root'})
 export class HeroService {
