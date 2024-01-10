@@ -1,19 +1,23 @@
-import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeroListComponent } from './hero-list.component';
 import { StudentListComponent } from './student-list.component';
-
+import { Component, OnInit } from '@angular/core';
 import { SalesTaxComponent } from './sales-tax.component';
+import {Router } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-root',
-  template: `
-    <h1>School Subjects and Students</h1>
-    <button onclick="window.location.href = 'subjectsPage.html';">View Subjects</button>
-    <app-student-list></app-student-list>
-    <app-sales-tax></app-sales-tax>
-  `,
+  templateUrl:'./app.component.html',
   imports: [HeroListComponent,StudentListComponent,SalesTaxComponent,RouterModule]
 })
-export class AppComponent { }
+export class AppComponent implements OnInit {
+ 
+  constructor(private router: Router) { }
+
+  ngOnInit(): void { }
+  
+   get getCurrentURL() {
+    return this.router.url;
+  }
+}

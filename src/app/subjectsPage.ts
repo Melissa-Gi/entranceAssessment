@@ -12,4 +12,4 @@ import { NgFor, NgIf } from '@angular/common';
     `,
     imports: [HeroListComponent]
   })
-export class ListComponent { }
+export class SubjectsPage { }
