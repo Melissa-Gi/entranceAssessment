@@ -13,20 +13,21 @@ const uri = 'mongodb+srv://MelG:connectToDB19461@cluster0.intpyda.mongodb.net/?r
 const client = new MongoClient(uri);
 
 export default client;
-/*
+
 async function run() {
   try {
-    //const database = client.db('Students');
-    //const students = database.collection('Student_Details');
+    const database = client.db('Students');
+    const students = database.collection('Student_Details');
 
     // Query for a student t
-    //const query = { id: 'RQJ5i1c' };
-    const student = await students.findOne(query);
+    const query = { id: 1 };
+    let allStudents = await students.find({}).toArray();
+    const student = await students.find();
 
-    console.log(student);
+    console.log(allStudents);
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
   }
 }
-run().catch(console.dir);*/
+run().catch(console.dir);

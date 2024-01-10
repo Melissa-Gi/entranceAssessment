@@ -1,12 +1,13 @@
 <h1>School Subjects and Students</h1>
-<router-outlet></router-outlet>
+
 <a style="margin-top: 20px;">This is my Defaul Page(app.component.html)</a>
-<a href="subjectsPage.html">
+
+<a href="./subjectsPage.html">
   <button>Subjects</button>
-  </a>
-<div *ngIf="!getCurrentURL.includes('/login')">
-  <button routerLink="/subjectsPage" routerLinkActive="active" ariaCurrentWhenActive="page">Subjects</button> 
-  <router-outlet></router-outlet>
-</div>
+</a>
+<a href="./student-detail.component.html">
+  <button>Students</button>
+</a>
 <!--<app-student-list></app-student-list>
 <app-sales-tax></app-sales-tax>-->
+<router-outlet></router-outlet>

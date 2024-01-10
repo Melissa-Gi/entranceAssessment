@@ -1,7 +1,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
-
+import { ActivatedRoute } from '@angular/router';
 import { Hero } from './hero';
 import { StudentDetailComponent } from './student-detail.component';
 import { HeroService } from './hero.service';
@@ -17,9 +17,10 @@ export class StudentListComponent implements OnInit {
   heroes: Hero[] = [];
   selectedHero: Hero | undefined;
 
-  constructor(private service: HeroService) { }
+  constructor(private service: HeroService, private route:ActivatedRoute) { }
 
   ngOnInit() {
+    
     this.heroes = this.service.getHeroes();
   }
 

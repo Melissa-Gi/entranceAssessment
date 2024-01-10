@@ -3,8 +3,7 @@ import { HeroListComponent } from './hero-list.component';
 import { StudentListComponent } from './student-list.component';
 import { Component, OnInit } from '@angular/core';
 import { SalesTaxComponent } from './sales-tax.component';
-import {Router } from '@angular/router';
-
+import { Router } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-root',

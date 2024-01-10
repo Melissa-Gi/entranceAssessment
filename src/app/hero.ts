@@ -1,10 +1,9 @@
-let nextId = 1;
 
-export class Hero {
-  id: number;
+export class Student {
   constructor(
-    public name: string,
+    public id: string,
+    public first_name: string,
+    public last_name: string,
     public power?: string) {
-      this.id = nextId++;
     }
 }
