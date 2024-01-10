@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 
-import { Hero } from './hero';
+import { Student } from './student';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 
@@ -14,8 +14,8 @@ import { HeroService } from './hero.service';
   providers:  [ HeroService ]
 })
 export class HeroListComponent implements OnInit {
-  heroes: Hero[] = [];
-  selectedHero: Hero | undefined;
+  heroes: Student[] = [];
+  selectedHero: Student | undefined;
 
   constructor(private service: HeroService) { }
 
@@ -23,7 +23,7 @@ export class HeroListComponent implements OnInit {
     this.heroes = this.service.getHeroes();
   }
 
-  selectHero(hero: Hero) { this.selectedHero = hero; }
+  selectHero(hero: Student) { this.selectedHero = hero; }
 }
 
 /*Original code

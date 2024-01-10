@@ -8,7 +8,7 @@ import {Router } from '@angular/router';
     standalone: true,
     selector: 'subjects-page',
     templateUrl: './subjectsPage.html',
-    imports: [HeroListComponent,Router,RouterModule]
+    imports: [HeroListComponent,RouterModule]
   })
 export class SubjectsPage {  
     constructor(private router: Router) { }

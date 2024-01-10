@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { Hero } from './hero';
+import { Student } from './student';
 
 @Component({
   standalone: true,
@@ -10,5 +10,5 @@ import { Hero } from './hero';
   imports: [FormsModule]
 })
 export class StudentDetailComponent {
-  @Input() hero!: Hero;
+  @Input() hero!: Student;
 }

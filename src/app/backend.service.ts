@@ -2,42 +2,34 @@ import { Injectable, Type } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { Logger } from './logger.service';
-import { Student } from './hero';
-import client from './server';
-var StudentModel = require('./models/student');
+import { Student } from './student';
+import mongodb, {MongoClient} from 'mongodb'
+//Get query data
+//const db =  require('./server.js');
 
+//Connect to the DB
+const uri = 'mongodb+srv://MelG:connectToDB19461@cluster0.intpyda.mongodb.net/?retryWrites=true&w=majority';
+const client = new MongoClient(uri);
 const database = client.db('Students');
 const students = database.collection('Student_Details');
 
-const HEROES = [await students.find()];
-console.log(HEROES)
+//Get array of JSON objects
+let allStudents = await students.find({}).toArray();
 
-export class MyComponent {
-  constructor(private http: HttpClient) {}
-
-  getData() {
-    this.http.get('http://localhost:4200/api/students')
-      .subscribe(data => {
-        console.log(data)
-        // handle the data
-      });
-  }
+//Convert to instance of local class
+let STUDENTS = new Array <Student>(allStudents.length);
+for (let i=0; i<allStudents.length; i++){
+  STUDENTS[i]=new Student(allStudents[i]);
 }
-
-/*const HEROES = [
-        new Hero('Windstorm', 'Weather mastery'),
-        new Hero('Dr Nice', 'Killing them with kindness'),
-        new Hero('Magneta', 'Manipulates metallic objects')
-      ];*/
 
 @Injectable({providedIn: 'root'})
 export class BackendService {
   constructor(private logger: Logger) {}
 
   getAll(type: Type<any>): PromiseLike<any[]> {
-    if (type === StudentModel.Student) {
+    if (type === Student) {
       // TODO: get from the database
-      return Promise.resolve<Student[]>(HEROES);
+      return Promise.resolve<Student[]>(STUDENTS);
     }
     const err = new Error('Cannot get object of this type');
     this.logger.error(err);
