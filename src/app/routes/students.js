@@ -4,6 +4,10 @@ import express, { json } from 'express';
 import mongodb, {MongoClient} from 'mongodb'
 const app = express();
 
+//DB connection to collection
+const database = client.db('Students');
+const students = database.collection('Student_Details');
+
 //getUser middleware
 async function getStudent(req, res, next) {
     let student;

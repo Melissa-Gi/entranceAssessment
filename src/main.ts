@@ -1,11 +1,11 @@
 import { bootstrapApplication, provideProtractorTestingSupport } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 import {AppComponent} from './app/app.component';
-import router from './app/routes/routes';
+import {AppModule} from './app/app.module';
+
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideProtractorTestingSupport(), // essential for e2e testing
-    provideRouter(router)
+    provideRouter(appRoutes, withComponentInputBinding),
   ]
 }).catch(err => console.error(err));
