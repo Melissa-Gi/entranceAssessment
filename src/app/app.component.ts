@@ -1,16 +1,19 @@
-import { Component, Input } from '@angular/core';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { HeroListComponent } from './hero-list.component';
 import { StudentListComponent } from './student-list.component';
+
 import { SalesTaxComponent } from './sales-tax.component';
-import { AppRoutingModule } from './app-routing.module';
-import { provideRouter, Routes } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  imports: [AppRoutingModule,RouterLink,RouterLinkActive,RouterOutlet],
+  template: `
+    <h1>School Subjects and Students</h1>
+    <button onclick="window.location.href = 'subjectsPage.html';">View Subjects</button>
+    <app-student-list></app-student-list>
+    <app-sales-tax></app-sales-tax>
+  `,
+  imports: [HeroListComponent,StudentListComponent,SalesTaxComponent,RouterModule]
 })
-
-export class AppComponent {title = 'routing-app' }
+export class AppComponent { }
