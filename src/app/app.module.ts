@@ -1,19 +1,23 @@
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { SubjectsPage } from './subjectsPage';
-import { AppComponent } from './app.component';
-import { BackendService } from './backend.service'
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from '../app/components/app.component';
+import { StudentListComponent } from './components/student-list.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubjectsPage,
+    StudentListComponent,
   ],
+
   imports: [
     BrowserModule,
     AppComponent,
+    RouterModule,
+    AppRoutingModule
   ],
-  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

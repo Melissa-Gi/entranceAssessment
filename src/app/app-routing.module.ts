@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { SubjectsPage } from './subjectsPage';
-import { AppComponent } from './app.component';
+import { RouterModule,Routes } from '@angular/router';
+import { SubjectsPage } from './components/subjectsPage';
+import { StudentListComponent } from '../app/components/student-list.component';
 
 
 const routes: Routes = [
-  {path: 'Home', component: AppComponent},
-  {path: 'Subjects', component: SubjectsPage},
+  {path: '', component: StudentListComponent},
+  {path: 'localhost:4200/Subjects', component: SubjectsPage},
   {path: '**', redirectTo: ''}
 ]; 
 
