@@ -1,3 +1,5 @@
+//Not implemented
+
 import Student from "../models/student";
 import client from "./server";
 import express, { json } from 'express';
@@ -83,4 +85,3 @@ router.delete("/api/students/:id", async (req, res) => {
         res.status(500).json({ message: err.message });
       }});
 
-module.exports = router;

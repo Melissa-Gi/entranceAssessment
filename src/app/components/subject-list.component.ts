@@ -2,29 +2,29 @@
 import { Component, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import Student from '../models/student';
-import { StudentDetailComponent } from './subject-detail.component';
-import { StudentService } from '../services/student.service';
+import Subject from '../models/subject';
+import { SubjectDetailComponent } from './subject-detail.component';
+import { SubjectService } from '../services/subject.service';
 
 @Component({
   standalone: true,
   selector:    'app-subject-list',
   templateUrl: './subject-list.component.html',
-  imports:     [ NgFor, NgIf, StudentDetailComponent ],
-  providers:  [ StudentService ]
+  imports:     [ NgFor, NgIf, SubjectDetailComponent ],
+  providers:  [ SubjectService ]
 })
 export class SubjectListComponent implements OnInit {
-  heroes: Student[] = [];
-  selectedHero: Student | undefined;
+  subjects: Subject[] = [];
+  selectedSubject: Subject | undefined;
 
-  constructor(private service: StudentService) { }
+  constructor(private service: SubjectService) { }
 
   ngOnInit() {
     
-    this.heroes = this.service.getStudents();
+    this.subjects = this.service.getStudents();
   }
 
-  selectHero(hero: Student) { this.selectedHero = hero; }
+  selectSubject(subject: Subject) { this.selectedSubject = subject; }
 }
 
 /*Original code
