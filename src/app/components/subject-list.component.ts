@@ -17,7 +17,7 @@ export class SubjectListComponent implements OnInit {
   heroes: Student[] = [];
   selectedHero: Student | undefined;
 
-  constructor(private service: StudentService, private route:ActivatedRoute) { }
+  constructor(private service: StudentService) { }
 
   ngOnInit() {
     

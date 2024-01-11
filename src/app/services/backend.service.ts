@@ -7,6 +7,7 @@ import { Injectable, Type } from '@angular/core';
 import { Logger } from '../services/logger.service';
 
 // Global Variables
+const STUDENTS = allStudents();
 export const collections:{
     students?: mongodb.Collection
     subjects?: mongodb.Collection}={}
@@ -49,12 +50,11 @@ export async function allStudents ():Promise<Student[]> {
         // Query for all students
         const query = { id: 1 };
         let allStudents = await studentsCollection.find({}).toArray();
-        let students = new Array <Student>(allStudents.length);
+        let studentArray = <Student[]> JSON.parse(allStudents.toString());      
+        return studentArray;
+        /*let students = new Array <Student>(allStudents.length);
         for (let i=0; i<allStudents.length; i++){
-        students[i]=new Student(allStudents[i]);
-        }
-        console.log(students);
-        return students;
+        students[i]=new Student(allStudents[i]);}*/
     }
       finally {
         // Ensures that the client will close when you finish/error
@@ -63,7 +63,6 @@ export async function allStudents ():Promise<Student[]> {
 
 }
 
-
 @Injectable({providedIn: 'root'})
 export class BackendService {
   constructor(private logger: Logger) {}
@@ -71,7 +70,7 @@ export class BackendService {
   getAll(type: Type<any>): PromiseLike<any[]> {
     if (type === Student) {
       // TODO: get from the database
-      return Promise.resolve<Student[]>(allStudents());
+      return Promise.resolve<Student[]>(STUDENTS);
     }
     const err = new Error('Cannot get object of this type');
     this.logger.error(err);
