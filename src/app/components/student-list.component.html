@@ -1,19 +1,19 @@
 
-<p><em>Select a subject from the list to update its details or delete it.</em></p>
+<p><em>Select a student from the list to update its details or delete it.</em></p>
 <p></p>
 <table>
   <tr>
-    <th>Subject</th>
+    <th>Students</th>
   </tr>
-  <tr *ngFor="let hero of heroes">
-    <td><button type="button" style="background-color: transparent;"(click)="selectHero(hero)">
-      {{hero.first_name}}
+  <tr *ngFor="let student of students">
+    <td><button type="button" style="background-color: transparent;"(click)="selectStudent(student)">
+      {{student.first_name}}
     </button></td>
   </tr>
 </table>
 <button type="button">Create</button>
 
-<app-hero-detail *ngIf="selectedHero" [hero]="selectedHero"></app-hero-detail>
+<app-student-detail *ngIf="selectedStudent" [student]="selectedStudent"></app-student-detail>
 
 
 <!--Original code

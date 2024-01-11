@@ -1,4 +1,4 @@
-import { HeroListComponent } from './hero-list.component';
+import { SubjectListComponent } from '../components/subject-list.component';
 import { Component, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -8,7 +8,7 @@ import {Router } from '@angular/router';
     standalone: true,
     selector: 'subjects-page',
     templateUrl: './subjectsPage.html',
-    imports: [HeroListComponent,RouterModule]
+    imports: [SubjectListComponent,RouterModule]
   })
 export class SubjectsPage {  
     constructor(private router: Router) { }

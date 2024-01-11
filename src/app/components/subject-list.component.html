@@ -1,9 +1,9 @@
 
-<p><em>Select a student from the list to update their details or delete them.</em></p>
+<p><em>Select a Subject from the list to update their details or delete them.</em></p>
 <p></p>
 <table>
   <tr>
-    <th>Subject</th>
+    <th>Subjects</th>
   </tr>
   <tr *ngFor="let hero of heroes">
     <td><button type="button" style="background-color: transparent;"(click)="selectHero(hero)">
@@ -13,7 +13,7 @@
 </table>
 <button type="button">Create</button>
 
-<app-student-detail *ngIf="selectedHero" [hero]="selectedHero"></app-student-detail>
+<app-subject-detail *ngIf="selectedHero" [hero]="selectedHero"></app-subject-detail>
 
 
 <!--Original code

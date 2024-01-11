@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { Student } from './student';
+import Student from '../models/student';
 
 @Component({
   standalone: true,
-  selector: 'app-hero-detail',
-  templateUrl: './hero-detail.component.html',
+  selector: 'app-subject-detail',
+  templateUrl: './subject-detail.component.html',
   imports: [FormsModule]
 })
-export class HeroDetailComponent {
+export class StudentDetailComponent {
   @Input() hero!: Student;
 }

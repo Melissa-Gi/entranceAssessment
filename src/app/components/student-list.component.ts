@@ -1,30 +1,28 @@
 
 import { Component, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { Student } from './student';
+
+import Student from '../models/student';
 import { StudentDetailComponent } from './student-detail.component';
-import { HeroService } from './services/student.service';
+import { StudentService } from '../services/student.service';
 
 @Component({
-  standalone: true,
   selector:    'app-student-list',
   templateUrl: './student-list.component.html',
   imports:     [ NgFor, NgIf, StudentDetailComponent ],
-  providers:  [ HeroService ]
+  providers:  [ StudentService ]
 })
 export class StudentListComponent implements OnInit {
-  heroes: Student[] = [];
-  selectedHero: Student | undefined;
+  students: Student[] = [];
+  selectedStudent: Student | undefined;
 
-  constructor(private service: HeroService, private route:ActivatedRoute) { }
+  constructor(private service: StudentService) { }
 
   ngOnInit() {
-    
-    this.heroes = this.service.getHeroes();
+    this.students = this.service.getStudents();
   }
 
-  selectHero(hero: Student) { this.selectedHero = hero; }
+  selectStudent(student: Student) { this.selectedStudent = student; }
 }
 
 /*Original code
