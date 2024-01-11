@@ -1,26 +1,60 @@
-K so download nodejs
-download npm
-use npm to install:
-    nodemon
-    mongoose
-    angular
-    typescript
-should you not have them already
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-ensure you have the versions in the package.json or later
+This is my attempt at the technical assessmentin order to gain skills in:
+* Angular CLI projects using typescript
+* Routing with typescript
+* State management with NGrX
+* API calls with Node.js and express
+* Connecting MongoDB database to the application
 
-run with 'ng serve --open' directly, or 
-configure using nodemon and run 'npm run dev'
 
-e2e is for testing purposes, that won't be running by default
-The app will run in localhost:4200: the default port Angular uses
+<br>
 
-Left to do:
-figuring out how to do routing by managing the path names to connect and perform actions with the endpoints
-Test this connection on postman
-- Endpoints perform a specific function, taking some number of parameters and return data to the client
-- This is where you implement triggers
+>**I was only able to perfect DB connection and angular components and implement structures for routing. The application envokes a call stack logic error which was difficult to debug and so the interface will regrettably not run or display in the web browser as of now** 
 
-Connect front end with backend and get rid of the connections to this random hero data stuff
-rename files accordingly
-Get separate pages for subjects and students by integrating the routing, this will go with the connection by using the endpoints given
+<br>
+
+### Built With
+
+* Typescript
+* CSS
+* HTML
+* Node.js
+* VS code
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites and Installation
+
+* Download nodejs
+* Use npm to install correct versions of:
+    - nodemon
+    - mongoose
+    - angular
+    - typescript
+* Ensure versions of your software align with those detailed in the package.json file
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+1. To display DB connection run the following command:
+    ```
+    npm run dev
+    ```
+    This will output all the records in the student_details database and all the records in the subjects database in the terminal
+
+2. To open the Angular application run the following command:
+    ```
+    npm run app
+    ```
+    This will open a new window in your browser with the app hosted on localhost:4200
+
+
+
+<p align="right">(<a href="#About-The-Project">back to top</a>)</p>
