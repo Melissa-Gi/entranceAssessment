@@ -1,7 +1,8 @@
+/*Not implemented
+
 import {AppComponent} from '../components/app.component';
-//Not implemented
 // External Dependencies
-/*import { collections } from "../services/backend.service";
+import { collections } from "../services/backend.service";
 import express, { Request, Response } from "express";
 import { ObjectId } from "mongodb";
 import Student from "../models/student";

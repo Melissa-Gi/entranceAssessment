@@ -14,8 +14,7 @@ let SUBJECTS: Subject[];
 export const collections:{
     students?: mongodb.Collection
     subjects?: mongodb.Collection}={}
-const DB_CONN_STRING="mongodb+srv://MelG:connectToDB19461@cluster0.intpyda.mongodb.net/?retryWrites=true&w=majority"
-const DB_NAME="Students"
+
 const STUDENTS_COLLECTION_NAME="Student_Details"
 const SUBJECTS_COLLECTION_NAME="Subjects"
 
@@ -85,7 +84,7 @@ export class BackendSubjectService {
   constructor(private logger: Logger) {}
 
   getAllSubjects(type: Type<any>): PromiseLike<any[]> {
-    if (type === Student) {
+    if (type === Subject) {
       // TODO: get from the database
       return Promise.resolve<Subject[]>(SUBJECTS);
     }

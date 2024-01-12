@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from '../app/components/app.component';
 import { StudentListComponent } from './components/student-list.component';
 import { RouterModule } from '@angular/router';
+import { SubjectListComponent } from './components/subject-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentListComponent,
+    SubjectListComponent,
   ],
 
   imports: [
@@ -18,6 +20,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     AppRoutingModule
   ],
-  bootstrap: [AppComponent]
+  providers:[],
+  bootstrap:[AppComponent],
 })
 export class AppModule { }
