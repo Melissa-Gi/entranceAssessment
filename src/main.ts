@@ -1,7 +1,10 @@
 import { bootstrapApplication, provideProtractorTestingSupport } from '@angular/platform-browser';
-import { AppModule } from './app/app.module';
+import { AppComponent } from './app/components/app.component';
+import { Routes } from '@angular/router';
+import { StudentListComponent } from './app/components/student-list.component';
+import { SubjectListComponent } from './app/components/subject-list.component';
 
-bootstrapApplication(AppModule, {
+bootstrapApplication(AppComponent, {
   providers: [
     provideProtractorTestingSupport(), // essential for e2e testing
   ]

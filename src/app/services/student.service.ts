@@ -12,10 +12,13 @@ export class StudentService {
     private logger: Logger) { }
 
   getStudents() {
+    //const headers = new HttpHeaders();
+    //.set('content-type')
     this.backend.getAllStudents(Student).then( (students: Student[]) => {
       this.logger.log(`Fetched ${students.length} students.`);
       this.students.push(...students); // fill cache
     });
     return this.students;
+    //return this.http.get<Array<Student>>('http://localhost:3000/subjects,{headers})')
   }
 }
