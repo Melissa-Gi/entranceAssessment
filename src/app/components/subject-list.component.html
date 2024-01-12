@@ -5,15 +5,15 @@
   <tr>
     <th>Subjects</th>
   </tr>
-  <tr *ngFor="let hero of heroes">
-    <td><button type="button" style="background-color: transparent;"(click)="selectHero(hero)">
-      {{hero.first_name}}
+  <tr *ngFor="let subject of subjects">
+    <td><button type="button" style="background-color: transparent;"(click)="selectSubject(subject)">
+      {{subject.name}}
     </button></td>
   </tr>
 </table>
 <button type="button">Create</button>
 
-<app-subject-detail *ngIf="selectedHero" [hero]="selectedHero"></app-subject-detail>
+<app-subject-detail *ngIf="selectedSubject" [subject]="selectedSubject"></app-subject-detail>
 
 
 <!--Original code

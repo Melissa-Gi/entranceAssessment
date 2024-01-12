@@ -7,10 +7,10 @@ import { SubjectDetailComponent } from './subject-detail.component';
 import { SubjectService } from '../services/subject.service';
 
 @Component({
-  standalone: true,
+  standalone:true,
   selector:    'app-subject-list',
   templateUrl: './subject-list.component.html',
-  imports:     [ NgFor, NgIf, SubjectDetailComponent ],
+  imports: [NgFor, NgIf, SubjectDetailComponent],
   providers:  [ SubjectService ]
 })
 export class SubjectListComponent implements OnInit {
@@ -21,7 +21,7 @@ export class SubjectListComponent implements OnInit {
 
   ngOnInit() {
     
-    this.subjects = this.service.getStudents();
+    this.subjects = this.service.getSubjects();
   }
 
   selectSubject(subject: Subject) { this.selectedSubject = subject; }

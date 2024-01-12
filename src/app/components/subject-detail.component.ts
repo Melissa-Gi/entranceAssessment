@@ -10,5 +10,5 @@ import Subject from '../models/subject';
   imports: [FormsModule]
 })
 export class SubjectDetailComponent {
-  @Input() hero!: Subject;
+  @Input() subject!: Subject;
 }
