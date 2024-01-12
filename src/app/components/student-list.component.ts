@@ -7,9 +7,10 @@ import { StudentDetailComponent } from './student-detail.component';
 import { StudentService } from '../services/student.service';
 
 @Component({
+  standalone:true,
   selector:    'app-student-list',
   templateUrl: './student-list.component.html',
-  imports:     [ NgFor, NgIf, StudentDetailComponent ],
+  imports: [NgFor, NgIf, StudentDetailComponent],
   providers:  [ StudentService ]
 })
 export class StudentListComponent implements OnInit {

@@ -11,7 +11,7 @@ export class SubjectService {
     private backend: BackendSubjectService,
     private logger: Logger) { }
 
-  getStudents() {
+  getSubjects() {
     this.backend.getAllSubjects(Subject).then( (students: Subject[]) => {
       this.logger.log(`Fetched ${students.length} students.`);
       this.subjects.push(...students); // fill cache

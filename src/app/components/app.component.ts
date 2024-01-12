@@ -6,12 +6,12 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   templateUrl:'./app.component.html',
-  imports: [StudentListComponent,CommonModule, RouterOutlet, RouterLink, RouterLinkActive]
 })
 export class AppComponent implements OnInit {
  
   constructor(private router: Router) { }
 
   ngOnInit(): void { }
-
+  get getCurrentURL() {
+    return this.router.url; }
 }

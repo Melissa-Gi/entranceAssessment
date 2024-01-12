@@ -28,7 +28,8 @@ async function run() {
     // Query for all students
     //let allStudents = await students.find({}).toArray();
    
-    console.log(studentsString,subjectsString);
+    console.log(studentsString);
+    console.log(subjectsString);
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();

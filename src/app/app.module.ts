@@ -10,14 +10,10 @@ import { SubjectListComponent } from './components/subject-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-    StudentListComponent,
-    SubjectListComponent,
   ],
 
   imports: [
     BrowserModule,
-    AppComponent,
-    RouterModule,
     AppRoutingModule
   ],
   providers:[],

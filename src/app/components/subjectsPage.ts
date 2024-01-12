@@ -1,4 +1,4 @@
-import { SubjectListComponent } from '../components/subject-list.component';
+/*import { SubjectListComponent } from '../components/subject-list.component';
 import { Component, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -17,4 +17,4 @@ export class SubjectsPage {
     
      get getCurrentURL() {
       return this.router.url; }
-     }
+     }*/
