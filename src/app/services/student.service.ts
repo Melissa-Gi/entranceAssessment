@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 
 /**This line imports the subject class from the specified path. 
  * A model representing the structure of a subject. */
-import { subject } from '../models/subject.model';
+import { student } from '../models/student.model';
 
 
 /**This is a decorator applied to the SubjectService class. 
@@ -24,14 +24,14 @@ import { subject } from '../models/subject.model';
 })
 
 /**Declaring the SubjectServices class */
-export class SubjectService {
+export class StudentService {
 
   /**This is the constructor of the SubjectService class. 
    * It takes an instance of the HttpClient class as a parameter and assigns it to a private property named http.*/
   constructor(private http: HttpClient) { }
 
   /**This declares a method named getSubjects that returns an Observable of an array of subject objects. */
-  getSubjects(): Observable<Array<subject>>{
+  getStudents(): Observable<Array<student>>{
 
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
@@ -39,6 +39,6 @@ export class SubjectService {
     /**This line makes an HTTP POST request to the specified URL 'http://localhost:4200/subject' using the HttpClient instance 
      * (this.http). The empty object {} is passed as the request body. 
      * The method returns an Observable that will emit an array of subject objects once the HTTP request is complete. */
-    return this.http.get<Array<subject>>('http://localhost:3000/subjects', {headers})
+    return this.http.get<Array<student>>('http://localhost:3000/students', {headers})
   };
 }

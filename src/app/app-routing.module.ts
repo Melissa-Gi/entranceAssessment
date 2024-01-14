@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  //{ path: 'subject', component: SubjectComponent },
-  { path: 'subjects', loadChildren: () => import('./subject/component/subject.module').then(m => m.SubjectModule) },
-  // Other routes if any
+  { path: '', component: AppComponent },
+  { path: 'subjects', loadChildren: () => import('./Subject/component/subject.module').then(m => m.SubjectModule) },
+  { path: 'students', loadChildren: () => import('./Student/component/student.module').then(m => m.StudentModule) },
 ];
 
 @NgModule({

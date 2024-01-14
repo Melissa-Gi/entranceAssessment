@@ -17,5 +17,8 @@ export class AppComponent {
   navigateToSubject() {
     this.router.navigate(['/subjects']);
   }
+  navigateToStudent() {
+    this.router.navigate(['/students']);
+  }
   
 }
