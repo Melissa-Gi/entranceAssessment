@@ -1,7 +1,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is my attempt at the technical assessmentin order to gain skills in:
+This is my attempt at a technical assessment order to gain skills in:
 * Angular CLI projects using typescript
 * Routing with typescript
 * State management with NGrX
@@ -11,17 +11,18 @@ This is my attempt at the technical assessmentin order to gain skills in:
 
 <br>
 
->**I was only able to perfect DB connection and angular components and implement structures for routing. The application envokes a call stack logic error which was difficult to debug and so the interface will regrettably not run or display in the web browser as of now** 
+>**The application is a platform to act as a sort of school database interface which displays a table of students and subjects which the user can view and make changes to. Functionality is still being added for some REST functions** 
 
 <br>
 
 ### Built With
 
 * Typescript
+* Express
+* Javascript
 * CSS
 * HTML
 * Node.js
-* VS code
 
 
 <!-- GETTING STARTED -->
@@ -43,17 +44,22 @@ To get a local copy up and running follow these simple example steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. To display DB connection run the following command:
+1. Get the backend server running on local:3000 by going to the command line in your terminal and typing:
     ```
     npm run dev
     ```
-    This will output all the records in the student_details database and all the records in the subjects database in the terminal
+    This is equivalent to running nodemon api/server.js or node api/server.js. A successful connection will output 
+    ```
+    Example app listening at http://localhost:3000
+    ```
 
-2. To open the Angular application run the following command:
+2. Create a **new terminal**. This will host the frontend server  to open the Angular application by typing:
     ```
-    npm run app
+    npm run start
     ```
-    This will open a new window in your browser with the app hosted on localhost:4200
+    This is equivalent to running ng serve and will open a new window in your browser with the app hosted on localhost:4200. If this doesn't happen automatically, type localhost:4200 into your browser to connect.
+
+3. Make use of the interface buttons or endpoints to navigate the app.
 
 
 
