@@ -12,7 +12,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "ng e2e",
-    "dev": "nodemon src/app/server.js"
+    "dev": "nodemon api/server.js"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "@angular/compiler": "17.0.0",
     "@angular/core": "17.0.0",
     "@angular/forms": "17.0.0",
+    "@angular/http": "^7.2.16",
     "@angular/platform-browser": "17.0.0",
     "@angular/platform-browser-dynamic": "17.0.0",
     "@angular/router": "17.0.0",
