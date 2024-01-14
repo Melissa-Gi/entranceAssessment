@@ -35,7 +35,6 @@ export class SubjectService {
 
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
-      .set('Access-Control-Allow-Origin', '*');
 
     /**This line makes an HTTP POST request to the specified URL 'http://localhost:4200/subject' using the HttpClient instance 
      * (this.http). The empty object {} is passed as the request body. 

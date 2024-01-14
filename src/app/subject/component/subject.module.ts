@@ -12,6 +12,7 @@ import { SubjectComponent } from './subject.component';
   imports: [
     CommonModule,
     SubjectRoutingModule
-  ]
+  ],
+  exports: [SubjectComponent] // Only if you plan to use SubjectComponent outside this module
 })
 export class SubjectModule { }

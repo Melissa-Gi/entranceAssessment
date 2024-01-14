@@ -14,11 +14,32 @@ import { subject } from '../../model/subject.model';
  * These are used for handling asynchronous operations and creating observable streams of data. */
 import { Observable, Subscription } from 'rxjs';
 
+/*@Component({
+  standalone:true,
+  selector:    'app-subject-list',
+  templateUrl: './subject-list.component.html',
+  imports: [NgFor, NgIf, SubjectDetailComponent],
+  providers:  [ SubjectService ]
+})
+export class SubjectListComponent implements OnInit {
+  subjects: subject[] = [];
+  selectedSubject: subject | undefined;
+
+  constructor(private service: SubjectService) { }
+
+  ngOnInit() {
+    
+    this.subjects = this.service.getSubjects();
+  }
+
+  selectSubject(subject: Subject) { this.selectedSubject = subject; }
+}*/
+
 /**This is the Component decorator, and it is used to define metadata for the Angular component. 
  * It specifies the component's selector, templateUrl (HTML file for the component), and styleUrls (CSS file for styling). */
 @Component({
   selector: 'app-subject',
-  templateUrl: './subject-list.component.html',
+  templateUrl: './subject.component.html',
 })
 
 /**Declaring the subject class */

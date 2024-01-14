@@ -12,7 +12,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "e2e": "ng e2e",
-    "dev": "nodemon src/app/api/server.ts"
+    "dev": "nodemon api/server.js"
   },
   "private": true,
   "dependencies": {
