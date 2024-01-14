@@ -48,6 +48,7 @@ export class SubjectComponent {
   /**This declares a property named subject and initializes it as an empty array of subject objects. 
    * This property will be used to store the subjects fetched from the service. */
   subjects: Array<subject> = [];
+  selectedSubject: subject | undefined;
 
   /**This is the constructor of the SubjectComponent class. 
    * It takes an instance of SubjectService as a parameter (dependency injection) and initializes the component. */
@@ -67,5 +68,7 @@ export class SubjectComponent {
   getSubjects(): Observable<any>{
     return this.SubjectService.getSubjects()
   }
+  selectSubject(subject: subject) { this.selectedSubject = subject; }
+
 
 }

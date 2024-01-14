@@ -1,19 +1,21 @@
-
-<table>
-  {{ students | json}}
-</table>
-
-
-<!--<p><em>Select a Subject from the list to update their details or delete them.</em></p>
+<p><em>Select a Student from the list to update their details or delete them.</em></p>
 <p></p>
 <table>
   <tr>
-    <th>Subjects</th>
+    <th>ID</th>
+    <th>Firstname</th>
+    <th>Surname</th>
   </tr>
-  <tr *ngFor="let subject of subjects">
-    <td><button type="button" style="background-color: transparent;"(click)="selectSubject(subject)">
-      {{subject.name}}
+  <tr *ngFor="let student of students">
+    <td><button type="button" style="background-color: transparent;"(click)="selectStudent(student)">
+      {{student.id}}
+    </button></td>
+    <td><button type="button" style="background-color: transparent;"(click)="selectStudent(student)">
+      {{student.first_name}}
+    </button></td>
+    <td><button type="button" style="background-color: transparent;"(click)="selectStudent(student)">
+      {{student.last_name}}
     </button></td>
   </tr>
 </table>
-<button type="button">Create</button>-->
+<button type="button">Create</button>
