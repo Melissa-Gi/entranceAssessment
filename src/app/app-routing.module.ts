@@ -1,18 +1,14 @@
 import { NgModule } from '@angular/core';
-import { RouterModule,Routes } from '@angular/router';
-import { StudentListComponent } from '../app/components/student-list.component';
-//import { AppComponent } from './components/app.component';
-import { SubjectListComponent } from './components/subject-list.component';
-
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: 'Students', component: StudentListComponent},
-  {path: 'Subjects', component: SubjectListComponent},
-  {path: '**', redirectTo: ''}
-]; 
+  //{ path: 'subject', component: SubjectComponent },
+  { path: 'subjects', loadChildren: () => import('./subject/component/subject.module').then(m => m.SubjectModule) },
+  // Other routes if any
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
