@@ -28,7 +28,6 @@ app.get('/subjects', async (req, res) => {
 //Get one subject
 app.get('/subjects/:id', async (req, res) => {
   const subjectID = Number(req.params.id);
-  console.log(subjectID);
   let oneSubject = await subjectsCollection.find({sub_id:subjectID}).toArray();
   res.send(oneSubject);
 });

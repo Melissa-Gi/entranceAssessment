@@ -1,11 +1,12 @@
 <p><em>Interact with the text below to access certain subjects, all subjects are displayed by default</em></p>
+
 <form id="SubjectID">
   <label for="sub_id">SubjectID</label>
     <input type="text" id="sub_id" name="sub_id"><br><br>
     <button type="button"(click)="handleIDForm()">Submit</button>
 </form>
 <div class="button-wrapper"> 
-    <button type="button">Create</button>
+    <button type="button"(click)="NewSubjectForm()">Create</button>
     <button type="button" [routerLink]="['./',sub_id]">Display</button>
     <button type="button">Delete</button>
 </div>
