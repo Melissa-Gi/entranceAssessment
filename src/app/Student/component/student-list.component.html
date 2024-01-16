@@ -1,5 +1,12 @@
-<p><em>Select a Student from the list to update their details or delete them.</em></p>
-<p></p>
+<p><em>Interact with the text below to access certain students, all students are displayed by default</em></p>
+
+<label for="sub_id">Student ID</label>
+  <input type="text" id="sub_id" name="sub_id"><br><br>
+<div class="button-wrapper"> 
+    <button type="button">Display</button>
+    <button type="button" [routerLink]="['./','91263']">Create</button>
+    <button type="button">Delete</button>
+</div>
 <table>
   <tr>
     <th>ID</th>
@@ -19,3 +26,4 @@
   </tr>
 </table>
 <button type="button">Create</button>
+<router-outlet></router-outlet>

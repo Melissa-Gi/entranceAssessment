@@ -4,8 +4,8 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
-  { path: 'subjects', loadChildren: () => import('./Subject/component/subject.module').then(m => m.SubjectModule) },
   { path: 'students', loadChildren: () => import('./Student/component/student.module').then(m => m.StudentModule) },
+  { path: 'subjects', loadChildren: () => import('./Subject/component/subject.module').then(m => m.SubjectModule) },
 ];
 
 @NgModule({

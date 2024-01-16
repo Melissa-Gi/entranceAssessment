@@ -1,5 +1,13 @@
-<p><em>Select a Subject from the list to update their details or delete them.</em></p>
-<p></p>
+
+<p><em>Interact with the text below to access certain subjects, all subjects are displayed by default</em></p>
+
+<label for="sub_id">SubjectID</label>
+  <input type="text" id="sub_id" name="sub_id"><br><br>
+<div class="button-wrapper"> 
+    <button type="button">Display</button>
+    <button type="button" [routerLink]="['./','031843']">Create</button>
+    <button type="button">Delete</button>
+</div>
 <table>
   <tr>
     <th>ID</th>
@@ -18,4 +26,4 @@
     </button></td>
   </tr>
 </table>
-<button type="button">Create</button>
+<router-outlet></router-outlet>
