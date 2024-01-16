@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SubjectService } from '../../services/subject.service';
 
 @Component({
-  selector: 'create-subject',
+  selector: 'app-create-subject',
   templateUrl: './create-subject.component.html',
 })
 

@@ -12,10 +12,6 @@ const routes: Routes = [
     path: 'subjects/:id',
     component: SubjectComponent,
   },
-  {
-    path: 'subjects/create',
-    component: NewSubjectComponent,
-  },
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

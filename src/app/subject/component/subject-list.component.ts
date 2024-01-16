@@ -15,6 +15,7 @@ export class SubjectComponent implements OnInit{
   subjects: Array<subject> = [];
   selectedSubject: subject | undefined;
   sub_id: string | undefined;
+  showCreateNew = false;
 
   constructor(private SubjectService: SubjectService)
     {}
@@ -35,9 +36,8 @@ export class SubjectComponent implements OnInit{
         this.sub_id = inputElement.value;
         sub_id = Number(this.sub_id);
   }
-  NewSubjectForm(){
-    
+  createForm(){
+    this.showCreateNew = !this.showCreateNew;
   }
-
       
 }

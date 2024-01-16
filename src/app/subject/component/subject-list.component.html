@@ -1,15 +1,16 @@
-<p><em>Interact with the text below to access certain subjects, all subjects are displayed by default</em></p>
-
+<div class="button-wrapper"> 
+    <button type="button" [routerLink]="['./',sub_id]">Find</button>
+    <button type="button" (click)="createForm()">Create</button>
+    <button type="button">Delete</button>
+</div>
+<div *ngIf="showCreateNew">
+  <app-create-subject></app-create-subject>
+</div>
 <form id="SubjectID">
   <label for="sub_id">SubjectID</label>
     <input type="text" id="sub_id" name="sub_id"><br><br>
     <button type="button"(click)="handleIDForm()">Submit</button>
 </form>
-<div class="button-wrapper"> 
-    <button type="button" routerLink="create">Create</button>
-    <button type="button" [routerLink]="['./',sub_id]">Display</button>
-    <button type="button">Delete</button>
-</div>
 <table>
   <tr>
     <th>ID</th>
@@ -25,4 +26,3 @@
 <br>
 <br>
 <hr>
-<router-outlet></router-outlet>
