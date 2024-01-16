@@ -12,6 +12,7 @@ export class StudentComponent {
 
   students: Array<student> = [];
   selectedStudent: student | undefined;
+  studentID: string | undefined;
  
   constructor( 
 
@@ -25,6 +26,10 @@ export class StudentComponent {
     return this.StudentService.getStudents()
   }
   selectStudent(student: student) { this.selectedStudent = student; }
-
+  handleIDForm(){
+    const inputElement = <HTMLInputElement>document.getElementById('sub_id');
+    this.studentID = inputElement.value;
+    
+}
 
 }
