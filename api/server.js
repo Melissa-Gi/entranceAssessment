@@ -22,7 +22,6 @@ app.use(cors(corsOptions));
 //Get all subjects
 app.get('/subjects', async (req, res) => {
     let allSubjects = await subjectsCollection.find({}).toArray();
-    console.log(allSubjects);
     res.send(allSubjects);
 });
 

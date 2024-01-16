@@ -1,4 +1,4 @@
-<p><em>Interact with the text below to access certain students, all students are displayed by default</em></p>
+<p><em>Fill out the details in the text box below and click submit followed by your desired action. All students are displayed by default under the subjects tab</em></p>
 <form id="SubjectID">
   <label for="sub_id">Student ID</label>
     <input type="text" id="sub_id" name="sub_id"><br><br>
@@ -16,17 +16,12 @@
     <th>Surname</th>
   </tr>
   <tr *ngFor="let student of students">
-    <td><button type="button" style="background-color: transparent;"(click)="selectStudent(student)">
-      {{student.id}}
-    </button></td>
-    <td><button type="button" style="background-color: transparent;"(click)="selectStudent(student)">
-      {{student.first_name}}
-    </button></td>
-    <td><button type="button" style="background-color: transparent;"(click)="selectStudent(student)">
-      {{student.last_name}}
-    </button></td>
+    <td>{{student.id}}</td>
+    <td>{{student.first_name}}</td>
+    <td>{{student.last_name}}</td>
   </tr>
 </table>
 <br>
 <br>
+<hr>
 <router-outlet></router-outlet>

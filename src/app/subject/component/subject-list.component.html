@@ -16,17 +16,12 @@
     <th>Teacher</th>
   </tr>
   <tr *ngFor="let subject of subjects">
-    <td><button type="button" style="background-color: transparent;"(click)="selectSubject(subject)">
-      {{subject.sub_id}}
-    </button></td>
-    <td><button type="button" style="background-color: transparent;"(click)="selectSubject(subject)">
-      {{subject.name}}
-    </button></td>
-    <td><button type="button" style="background-color: transparent;"(click)="selectSubject(subject)">
-      {{subject.teacher}}
-    </button></td>
+    <td>{{subject.sub_id}}</td>
+    <td>{{subject.name}}</td>
+    <td>{{subject.teacher}}</td>
   </tr>
 </table>
 <br>
 <br>
+<hr>
 <router-outlet></router-outlet>
