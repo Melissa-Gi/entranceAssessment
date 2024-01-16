@@ -23,6 +23,15 @@ export class SubjectService {
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       const url = `${this.baseUrl}/subjects/${id}`;
-      return this.http.get<Array<subject>>(url, {headers})
+      return this.http.get<Array<subject>>(url, {headers});
   };
+
+  createSubject(id:number,name:string,teacher:string)
+  {
+    const headers = new HttpHeaders()
+    .set('content-type', 'application/json');
+    const body = { id, name, teacher };
+    this.http.put('http://localhost:3000/subjects', body, { headers })
+    .subscribe(response => {
+    });  }
 }

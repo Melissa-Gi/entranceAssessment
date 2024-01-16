@@ -13,5 +13,14 @@ export class NewSubjectComponent {
     constructor(private SubjectService: SubjectService )
     {}
 
+    handleCreateForm(){
+      var inputElement = <HTMLInputElement>document.getElementById('sub_id');
+      this.sub_id = Number(inputElement.value);
+      inputElement = <HTMLInputElement>document.getElementById('name');
+      this.subject_name = inputElement.value
+      inputElement = <HTMLInputElement>document.getElementById('teacher');
+      this.subject_teacher= inputElement.value
+      this.SubjectService.createSubject(this.sub_id,this.subject_name,this.subject_teacher);
+    }
 
 }
