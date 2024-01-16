@@ -3,13 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudentComponent } from './component/student-list.component';
 
 const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: StudentComponent,
-    children: [
-      { path: 'students/:id', component: StudentComponent } 
-    ]
-  }
+  },
+  {
+    path: 'students/:id',
+    component: StudentComponent,
+  },
+  {
+    path: 'students/create',
+    component: NewSubjectComponent,
+  },
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

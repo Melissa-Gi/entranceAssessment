@@ -6,7 +6,7 @@
     <button type="button"(click)="handleIDForm()">Submit</button>
 </form>
 <div class="button-wrapper"> 
-    <button type="button"(click)="NewSubjectForm()">Create</button>
+    <button type="button" routerLink="create">Create</button>
     <button type="button" [routerLink]="['./',sub_id]">Display</button>
     <button type="button">Delete</button>
 </div>
