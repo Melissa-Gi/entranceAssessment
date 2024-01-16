@@ -21,10 +21,15 @@ app.use(cors(corsOptions));
 
 //Get all subjects
 app.get('/subjects', async (req, res) => {
-    // get data from db
     let allSubjects = await subjectsCollection.find({}).toArray();
-    // res.send(result)
     res.send(allSubjects);
+});
+
+//Get one student
+app.get('/subjects/:id', async (req, res) => {
+  const subjectID = req.params.id;
+  let oneSubject = await subjectsCollection.find({sub_id:subjectID}).toArray();
+  res.send(oneSubject);
 });
 
 //Get all students
