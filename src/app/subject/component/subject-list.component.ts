@@ -3,7 +3,7 @@ import { SubjectService } from '../../services/subject.service';
 import { subject } from '../../models/subject.model';
 import { Observable, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
-var sub_id: string;
+var sub_id: number;
 @Component({
   selector: 'app-subject',
   templateUrl: './subject-list.component.html',
@@ -15,9 +15,9 @@ export class SubjectComponent {
   selectedSubject: subject | undefined;
   sub_id: string | undefined;
 
-  constructor(private SubjectService: SubjectService, router: Router )
+  constructor(private SubjectService: SubjectService)
     {
-      this.getSubjects().subscribe((data) => {this.subjects = data})
+      this.getSubjects().subscribe((data) => {this.subjects = data});
     }
     getSubjects(): Observable<any>{
       if (sub_id == undefined)
@@ -30,9 +30,8 @@ export class SubjectComponent {
 
   handleIDForm(){
         const inputElement = <HTMLInputElement>document.getElementById('sub_id');
-        sub_id = inputElement.value;
-        this.sub_id = sub_id;
-        console.log("lol")
+        this.sub_id = inputElement.value;
+        sub_id = Number(this.sub_id);
         
   }
 

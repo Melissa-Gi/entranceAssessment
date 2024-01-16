@@ -18,11 +18,11 @@ export class SubjectService {
     return this.http.get<Array<subject>>('http://localhost:3000/subjects', {headers})
   };
 
-  getOneSubject(id:string|undefined): Observable<Array<subject>>{
+  getOneSubject(id:number): Observable<Array<subject>>{
 
     const headers = new HttpHeaders()
       .set('content-type', 'application/json')
       const url = `${this.baseUrl}/subjects/${id}`;
-    return this.http.get<Array<subject>>(url, {headers})
+      return this.http.get<Array<subject>>(url, {headers})
   };
 }

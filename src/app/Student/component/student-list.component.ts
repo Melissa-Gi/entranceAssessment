@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { StudentService } from '../../services/student.service';
 import { student } from '../../models/student.model';
 import { Observable, Subscription } from 'rxjs';
+var studentID: string | undefined;
 
 @Component({
   selector: 'app-student',
@@ -23,13 +24,18 @@ export class StudentComponent {
     }
 
   getSubjects(): Observable<any>{
-    return this.StudentService.getStudents()
-  }
+    if (studentID == undefined)
+    return this.StudentService.getStudents();
+  else{
+    return this.StudentService.getOneStudent(studentID);
+  }}
+
   selectStudent(student: student) { this.selectedStudent = student; }
   handleIDForm(){
     const inputElement = <HTMLInputElement>document.getElementById('sub_id');
     this.studentID = inputElement.value;
-    
+    studentID = this.studentID;
+
 }
 
 }

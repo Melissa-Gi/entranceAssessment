@@ -7,18 +7,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  // Adding a router in the constructor
   constructor(private router: Router){ }
 
-  
-
-  title = 'Education App';
-
-  navigateToSubject() {
-    this.router.navigate(['/subjects']);
-  }
-  navigateToStudent() {
-    this.router.navigate(['/students']);
-  }
+  title = 'Angular App School Database';
   
 }

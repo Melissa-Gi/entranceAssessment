@@ -22,12 +22,14 @@ app.use(cors(corsOptions));
 //Get all subjects
 app.get('/subjects', async (req, res) => {
     let allSubjects = await subjectsCollection.find({}).toArray();
+    console.log(allSubjects);
     res.send(allSubjects);
 });
 
-//Get one student
+//Get one subject
 app.get('/subjects/:id', async (req, res) => {
-  const subjectID = req.params.id;
+  const subjectID = Number(req.params.id);
+  console.log(subjectID);
   let oneSubject = await subjectsCollection.find({sub_id:subjectID}).toArray();
   res.send(oneSubject);
 });
@@ -38,6 +40,13 @@ app.get('/students', async (req, res) => {
     let allStudents = await studentsCollection.find({}).toArray();
     // res.send(result)
     res.send(allStudents);
+});
+
+//Get one student
+app.get('/students/:id', async (req, res) => {
+  const studentID = req.params.id;
+  let oneStudent = await studentsCollection.find({id:studentID}).toArray();
+  res.send(oneStudent);
 });
 
 app.listen(port, () => {
