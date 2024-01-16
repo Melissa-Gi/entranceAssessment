@@ -13,6 +13,6 @@ import { SubjectComponent } from './subject-list.component';
     CommonModule,
     SubjectRoutingModule
   ],
-  exports: [SubjectComponent] // Only if you plan to use SubjectComponent outside this module
+  exports: [SubjectComponent] 
 })
 export class SubjectModule { }

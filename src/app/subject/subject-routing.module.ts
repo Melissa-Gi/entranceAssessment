@@ -7,7 +7,7 @@ const routes: Routes = [
     path: '', 
     component: SubjectComponent,
     children: [
-      { path: 'subjects/:id', component: SubjectComponent } // Example child route
+      { path: 'subjects/:id', component: SubjectComponent } 
     ]
   }
 ];

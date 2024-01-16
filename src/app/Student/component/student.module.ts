@@ -13,6 +13,6 @@ import { StudentComponent } from './student-list.component';
     CommonModule,
     StudentRoutingModule
   ],
-  exports: [StudentComponent] // Only if you plan to use SubjectComponent outside this module
+  exports: [StudentComponent]
 })
 export class StudentModule { }
