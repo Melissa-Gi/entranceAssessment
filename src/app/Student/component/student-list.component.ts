@@ -14,6 +14,7 @@ export class StudentComponent {
   students: Array<student> = [];
   selectedStudent: student | undefined;
   studentID: string | undefined;
+  showCreateNew = false;
  
   constructor( 
 
@@ -32,10 +33,13 @@ export class StudentComponent {
 
   selectStudent(student: student) { this.selectedStudent = student; }
   handleIDForm(){
-    const inputElement = <HTMLInputElement>document.getElementById('sub_id');
+    const inputElement = <HTMLInputElement>document.getElementById('student_id');
     this.studentID = inputElement.value;
     studentID = this.studentID;
 
-}
+  }
+  createForm(){
+    this.showCreateNew = !this.showCreateNew;
+  }
 
 }

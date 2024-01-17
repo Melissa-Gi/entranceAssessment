@@ -65,7 +65,7 @@ app.put('/students', async (req, res) => {
   const i = req.body.id;
   const fn = req.body.firstname;
   const ln = req.body.lastname;
-  const subs = req.body.subList;
+  const subs = req.body.subjectsArray;
   studentsCollection.insertOne({
     id:i,
     first_name:fn,
