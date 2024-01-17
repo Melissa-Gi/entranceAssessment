@@ -15,6 +15,7 @@ export class StudentComponent {
   selectedStudent: student | undefined;
   studentID: string | undefined;
   showCreateNew = false;
+  find = false;
  
   constructor( 
 
@@ -36,7 +37,9 @@ export class StudentComponent {
     const inputElement = <HTMLInputElement>document.getElementById('student_id');
     this.studentID = inputElement.value;
     studentID = this.studentID;
-
+    const button = document.getElementById("Submit");
+    button?.classList.toggle("active");
+    this.find = !this.find;
   }
   createForm(){
     this.showCreateNew = !this.showCreateNew;

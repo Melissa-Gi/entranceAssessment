@@ -1,5 +1,4 @@
 <div class="button-wrapper"> 
-  <button type="button" [routerLink]="['./',studentID]">Find</button>
   <button type="button" (click)="createForm()">Create</button>
   <button type="button">Delete</button>
 </div>
@@ -12,6 +11,9 @@
   <label for="student_id">Student ID</label>
     <input type="text" id="student_id" name="student_id"><br><br>
     <button type="button"(click)="handleIDForm()">Submit</button>
+    <div *ngIf="find">
+      <button type="button" [routerLink]="['./',studentID]">Find</button>
+    </div>
 </form>
 <table>
   <tr>
