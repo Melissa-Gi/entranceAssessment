@@ -80,3 +80,6 @@ input[type="text"] {
   width: 100%;
   padding: .5rem;
 }
+button.active {
+  background-color: #2ecc71; /* Green color */
+}

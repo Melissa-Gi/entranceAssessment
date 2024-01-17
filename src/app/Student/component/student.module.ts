@@ -3,16 +3,18 @@ import { CommonModule } from '@angular/common';
 
 import { StudentRoutingModule } from '../student-routing.module';
 import { StudentComponent } from './student-list.component';
+import { NewStudentComponent } from './create-student.component';
 
 
 @NgModule({
   declarations: [
-    StudentComponent
+    StudentComponent,
+    NewStudentComponent
   ],
   imports: [
     CommonModule,
     StudentRoutingModule
   ],
-  exports: [StudentComponent] // Only if you plan to use SubjectComponent outside this module
+  exports: [StudentComponent]
 })
 export class StudentModule { }

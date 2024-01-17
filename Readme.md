@@ -11,7 +11,7 @@ This is my attempt at a technical assessment order to gain skills in:
 
 <br>
 
->**The application is a platform to act as a sort of school database interface which displays a table of students and subjects which the user can view and make changes to. Functionality is still being added for some REST functions** 
+>**The application is a platform to act as a type of school database interface which displays a table of students and subjects which the user can view and make changes to. Functionality and conventions are still being added for some REST functions** 
 
 <br>
 
@@ -23,6 +23,7 @@ This is my attempt at a technical assessment order to gain skills in:
 * CSS
 * HTML
 * Node.js
+* NgRX/NxJS
 
 
 <!-- GETTING STARTED -->
@@ -53,7 +54,7 @@ To get a local copy up and running follow these simple example steps.
     Example app listening at http://localhost:3000
     ```
 
-2. Create a **new terminal**. This will host the frontend server  to open the Angular application by typing:
+2. Create a **new terminal**. This will host the frontend server and open the Angular application. Type in:
     ```
     npm run start
     ```

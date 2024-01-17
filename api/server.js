@@ -18,13 +18,37 @@ const corsOptions = {
     origin: 'http://localhost:4200',
   };
 app.use(cors(corsOptions));
+app.use(express.json());
 
 //Get all subjects
 app.get('/subjects', async (req, res) => {
-    // get data from db
     let allSubjects = await subjectsCollection.find({}).toArray();
-    // res.send(result)
     res.send(allSubjects);
+});
+
+//Get one subject
+app.get('/subjects/:id', async (req, res) => {
+  const subjectID = Number(req.params.id);
+  let oneSubject = await subjectsCollection.find({sub_id:subjectID}).toArray();
+  res.send(oneSubject);
+});
+
+//Add one subject
+app.put('/subjects', async (req, res) => {
+  const i = Number(req.body.id);
+  const n = req.body.name;
+  const t = req.body.teacher;
+  subjectsCollection.insertOne({
+    sub_id:i,
+    name:n,
+    teacher:t,
+  })
+});
+
+//Delete one subject
+app.delete('/subjects/:id', async (req, res) => {
+  const subjectID = Number(req.params.id);
+  subjectsCollection.deleteOne({sub_id:subjectID});
 });
 
 //Get all students
@@ -35,6 +59,33 @@ app.get('/students', async (req, res) => {
     res.send(allStudents);
 });
 
+//Get one student
+app.get('/students/:id', async (req, res) => {
+  const studentID = req.params.id;
+  let oneStudent = await studentsCollection.find({id:studentID}).toArray();
+  res.send(oneStudent);
+});
+
+//Add one student
+app.put('/students', async (req, res) => {
+  const i = req.body.id;
+  const fn = req.body.firstname;
+  const ln = req.body.lastname;
+  const subs = req.body.subjectsArray;
+  studentsCollection.insertOne({
+    id:i,
+    first_name:fn,
+    last_name:ln,
+    subjects:subs,
+  })
+});
+
+//Delete one student
+app.delete('/students/:id', async (req, res) => {
+  const studentID = req.params.id;
+  studentsCollection.deleteOne({id:studentID});
+});
+
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Angular app listening at http://localhost:${port}`);
 });

@@ -3,16 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { SubjectRoutingModule } from '../subject-routing.module';
 import { SubjectComponent } from './subject-list.component';
+import { NewSubjectComponent } from './create-subject.component';
 
 
 @NgModule({
   declarations: [
-    SubjectComponent
+    SubjectComponent,
+    NewSubjectComponent,
   ],
   imports: [
     CommonModule,
     SubjectRoutingModule
   ],
-  exports: [SubjectComponent] // Only if you plan to use SubjectComponent outside this module
 })
 export class SubjectModule { }
