@@ -15,7 +15,7 @@ export class StudentComponent {
   selectedStudent: student | undefined;
   studentID: string | undefined;
   showCreateNew = false;
-  find = false;
+  Submitted = false;
  
   constructor( 
 
@@ -39,10 +39,14 @@ export class StudentComponent {
     studentID = this.studentID;
     const button = document.getElementById("Submit");
     button?.classList.toggle("active");
-    this.find = !this.find;
+    this.Submitted = !this.Submitted;
   }
   createForm(){
     this.showCreateNew = !this.showCreateNew;
+  }
+
+  deleteStudent(){
+    this.StudentService.deleteStudent(String(this.studentID));
   }
 
 }

@@ -37,4 +37,14 @@ export class StudentService {
     this.http.put('http://localhost:3000/students', body, { headers })
     .subscribe(response => {
     });  }
+  
+    deleteStudent(id:string)
+    {
+      const headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      const url = `${this.baseUrl}/students/${id}`;
+      this.http.delete(url, { headers })
+      .subscribe(response => {
+      });  
+    }
 }

@@ -45,6 +45,12 @@ app.put('/subjects', async (req, res) => {
   })
 });
 
+//Delete one subject
+app.delete('/subjects/:id', async (req, res) => {
+  const subjectID = Number(req.params.id);
+  subjectsCollection.deleteOne({sub_id:subjectID});
+});
+
 //Get all students
 app.get('/students', async (req, res) => {
     // get data from db
@@ -74,6 +80,12 @@ app.put('/students', async (req, res) => {
   })
 });
 
+//Delete one student
+app.delete('/students/:id', async (req, res) => {
+  const studentID = req.params.id;
+  studentsCollection.deleteOne({id:studentID});
+});
+
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Angular app listening at http://localhost:${port}`);
 });

@@ -34,4 +34,14 @@ export class SubjectService {
     this.http.put('http://localhost:3000/subjects', body, { headers })
     .subscribe(response => {
     });  }
+  
+    deleteSubject(id:number)
+    {
+      const headers = new HttpHeaders()
+      .set('content-type', 'application/json')
+      const url = `${this.baseUrl}/subjects/${id}`;
+      this.http.delete(url, { headers })
+      .subscribe(response => {
+      });  
+    }
 }
