@@ -23,6 +23,7 @@ This is my attempt at a technical assessment order to gain skills in:
 * CSS
 * HTML
 * Node.js
+* NgRX/NxJS
 
 
 <!-- GETTING STARTED -->
