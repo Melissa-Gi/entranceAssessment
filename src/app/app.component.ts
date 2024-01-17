@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['../assets/app.css'] // Use 'styleUrls' instead of 'styleUrl'
+  styleUrls: ['../assets/app.css']
 })
 export class AppComponent {
 

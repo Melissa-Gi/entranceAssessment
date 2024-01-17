@@ -5,7 +5,7 @@ import { NewSubjectComponent } from './component/create-subject.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'subjects',
     component: SubjectComponent,
   },
   {
